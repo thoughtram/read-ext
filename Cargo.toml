@@ -2,3 +2,8 @@
 name = "readext"
 version = "0.0.1"
 authors = ["Christoph Burgdorf <christoph.burgdorf@bvsn.org>"]
+repository = "https://github.com/thoughtram/read-ext"
+readme = "README.md"
+keywords = ["read", "extension", "read_into_string", "read_into_vec"]
+license = "MIT"
+description = "Extensions for the standard Read trait"
