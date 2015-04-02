@@ -1,6 +1,6 @@
 use std::io::{ Result, Read };
 
-trait ReadExt: Read {
+pub trait ReadExt: Read {
     /// Read all bytes until EOF in this source, returning them as a new `Vec`.
     ///
     /// See `read_to_end` for other semantics.
@@ -19,3 +19,5 @@ trait ReadExt: Read {
         res.map(|_| buf)
     }
 }
+
+impl<T> ReadExt for T where T: Read {}
