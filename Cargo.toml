@@ -1,6 +1,6 @@
 [package]
 name = "readext"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Christoph Burgdorf <christoph.burgdorf@bvsn.org>"]
 repository = "https://github.com/thoughtram/read-ext"
 readme = "README.md"
