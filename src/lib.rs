@@ -1,4 +1,4 @@
-use std::io::{ Result, Read };
+use std::io::{Read, Result};
 
 pub trait ReadExt: Read {
     /// Read all bytes until EOF in this source, returning them as a new `Vec`.
@@ -17,6 +17,15 @@ pub trait ReadExt: Read {
         let mut buf = String::new();
         let res = self.read_to_string(&mut buf);
         res.map(|_| buf)
+    }
+
+    /// Reads a specific amount of bytes into an array, returning it as a new buffer.
+    ///
+    /// See `Read::read_exact` for other semantics.
+    fn read_into_array_exact<const SIZE: usize>(&mut self) -> Result<[u8; SIZE]> {
+        let mut buffer = [0; SIZE];
+        self.read_exact(&mut buffer)?;
+        Ok(buffer)
     }
 }
 
